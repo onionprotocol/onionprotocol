@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @onionprotocol
-- 👀 We're interested in building Defi Suite on the Canto Network; Like onionprotocol.com
+- 👀 We're interested in building suite of defi tools on the Canto Network; www.onionprotocol.com
 - 💞️ We're looking to collaborate on other web3 projects
 - 📫 You can reach us @ hello@onionprotocol.com
 
