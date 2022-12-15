@@ -1,0 +1,52 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<div class="uni-sign-up uk-section uk-section-large@m uk-panel uk-overflow-hidden uk-border-top">
+
+                
+                <div class="uk-margin-top uk-margin-large-top@m">
+                    <div class="uk-container">
+
+                        <div class="uk-flex-column uk-flex-center uk-width-medium@m uk-margin-auto">
+                            {% if messages %}
+                            {% for message in messages %}
+                                
+
+                                <!-- Notification bar -->
+                                <div class="uk-padding-xsmall uk-text-medium uk-text-bold uk-text-center uk-margin-remove uk-radius-remove uk-background-gradient uk-text-white" data-uk-alert>
+                                    <button aria-label="Close" class="uk-alert-close" type="button" data-uk-close></button>
+                                    <p class="uk-flex-middle uk-flex-center  uk-margin-remove ">{{ message }} </p>
+                    
+                                </div>    
+        
+                            {% endfor %}
+                            {% endif %}
+                            <form class="uk-form-stacked uk-panel uk-width-1-1" action="" method="post">
+                            	{% csrf_token %}
+                                <div class="uk-panel uk-section@m">
+                            <div class="uk-flex-center uk-flex-middle uk-text-center">
+                                <div class="uk-panel uk-flex-column uk-flex-middle">
+                                    <h1 class="uk-h3 uk-h3@m uk-margin-small">Create Wallet</h1>
+                                    <p class="uk-text-lead uk-text-muted uk-margin-remove">your access key: {{ otp_code }}</p>
+                                    <div class="uk-panel uk-inline uk-width-xlarge@m uk-margin-top uk-margin-medium-top@m">
+                                        <span class="uk-form-icon">
+                                            <i class="uk-icon-small bi bi-wallet-fill"></i>
+                                        </span>
+                                        <input type="text" name="otp" autocomplete="off" class="uk-input uk-form-large@m uk-radius-large" placeholder="enter access key">
+                                        <button type="submit" class="uk-position-absolute uk-form-icon-flip uk-button uk-button-xsmall uk-button-medium@m uk-button-primary" style="margin: 4px; border-radius: 12px">Submit</button>
+                                    </div>
+                                    <p class="uk-text-small uk-text-muted uk-margin-large-top@m">View all your assets in one easy click.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

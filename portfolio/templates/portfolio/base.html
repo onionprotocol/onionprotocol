@@ -1,0 +1,353 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zxx" class="uk-background-white dark:uk-background-gray-100 dark:uk-text-gray-20 uk-dark">
+    
+<!-- Mirrored from unistudio.co/html/renox/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Dec 2022 17:55:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Onion Protocol</title>
+        <link rel="icon" type="image/png" href="{% static 'assets/images/onion-22189.png' %}"/>
+        <meta name="description" content="NFT Marketplace Template">
+        <meta name="keywords" content="Cryptocurrency wallet, Asset manager, Smart contract creator, Blockchain tools, Decentralized technology, Digital asset management, Portfolio tracking, Price alerts, Market analysis, Smart contract deployment, Multiple account management, Support for different cryptocurrencies and tokens, User-friendly interface for creating and editing contracts, Testing and deploying contracts to the blockchain.">
+        <meta name="theme-color" content="#0066ff">
+
+        <!-- preload head styles -->
+        <link rel="preload" href="https://unistudio.co/html/renox/assets/fonts/brand-icons/brand-icons.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="{% static 'assets/css/swiper-bundle.min.css' %}" >
+        <link rel="preload" href="{% static 'assets/css/uikit.min.css' %}" >
+        <link rel="preload" href="{% static 'assets/css/theme/main.min.css' %}" >
+
+        <!-- preload footer scripts -->
+        <link rel="preload" href="{% static 'assets/js/uikit.min.js' %}">
+        <link rel="preload" href="{% static 'assets/js/uikit-components.js' %}">
+        <link rel="preload" href="{% static 'assets/js/jquery.min.js' %}">
+        <link rel="preload" href="{% static 'assets/js/swiper-bundle.min.js' %}">
+        <link rel="preload" href="{% static 'assets/js/feather.min.js' %}">
+        <link rel="preload" href="{% static 'assets/js/typed.min.js' %}">
+        <link rel="preload" href="{% static 'assets/js/anime.min.js' %}">
+        <link rel="preload" href="{% static 'assets/js/app.js' %}">
+        <link rel="preload" href="{% static 'assets/js/swiper-helper.js' %}">
+        <link rel="preload" href="{% static 'assets/js/typed-helper.js' %}">
+        <link rel="preload" href="{% static 'assets/js/anime-helper.js' %}">
+        <link rel="preload" href="{% static 'assets/js/anime-helper-defined-timelines.js' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+        <!-- include styles -->
+        <script src="{% static 'assets/js/app-head.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'assets/css/theme/main.min.css' %}">
+
+        <!-- include scripts -->
+        <script src="{% static 'assets/js/uikit.min.js' %}"></script>
+        <script src="{% static 'assets/js/uikit-components.js' %}"></script>
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5JJP7FY91"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-B5JJP7FY91');
+        </script>
+        <script async type="module">
+            import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'https://cdn.jsdelivr.net/npm/web-vitals@2.1.2/dist/web-vitals.js';
+            function sendToGoogleAnalytics({ name, delta, id }) {
+                gtag('event', name, {
+                    event_category: 'Web Vitals',
+                    event_label: id,
+                    value: Math.round(name === 'CLS' ? delta * 1000 : delta),
+                    non_interaction: true,
+                });
+            }
+            /* CLS FCP FID LCP TTFB */
+            getCLS(sendToGoogleAnalytics);
+            getFCP(sendToGoogleAnalytics);
+            getFID(sendToGoogleAnalytics);
+            getLCP(sendToGoogleAnalytics);
+            getTTFB(sendToGoogleAnalytics);
+        </script>
+    </head>
+    <body class="uni-body">
+
+        <!-- Circles -->
+        <div class="uni-circles">
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Menu modal -->
+        <div id="uni_mobile_menu" class="uni-mobile-menu uk-offcanvas" data-uk-offcanvas="mode: push; overlay: true; flip: true; selPanel: .uk-offcanvas-bar-panel;">
+            <div class="uk-offcanvas-bar-panel uk-panel dark:uk-background-gray-100">
+                <div class="uni-mobile-menu-wrap uk-flex-column uk-flex-between" data-uk-height-viewport="offset-bottom: true;">
+                    <div class="uni-mobile-menu-content">
+                        <header class="uk-card uk-card-2xsmall uk-flex-middle uk-flex-between">
+                            <div class="uk-flex-1">
+                                <button aria-label="Close Menu" class="uk-offcanvas-close uk-button uk-button-small uk-button-icon uk-button-default uk-button-outline uk-radius-circle" type="button">
+                                    <i class="uk-icon-small" data-feather="arrow-left"></i>
+                                </button>
+                            </div>
+                            <div>
+                                <h5 class="uk-h5 uk-margin-remove">Navigation</h5>
+                            </div>
+                            <div class="uk-flex-1"></div>
+                        </header>
+                        <hr class="uk-margin-remove">
+                        <div class="uk-card uk-card-small">
+                            
+                            <div class="uk-panel">
+                                <ul class="uk-nav uk-nav-default">
+                                    <li class="uk-nav-header">Main pages</li>
+                                    <li>
+                                        <a href="{% url 'app_user:generator' %}"><i class="uk-icon-xsmall" data-feather="box"></i> Token Generator</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'portfolio:canto_portfolio' %}"><i class="uk-icon-xsmall" data-feather="activity"></i> Asset Manager</a>
+                                    </li>
+                                    {% if app_user != null %}
+                                    <li>
+                                        <a href="{% url 'app_user:sign_out' %}"><i class="uk-icon-xsmall" data-feather="log-in"></i> Log out</a>
+                                    </li>
+                                    {% else %}
+                                    <li>
+                                        <a href="{% url 'wallet:canto_wallet' %}"><i class="uk-icon-xsmall" data-feather="log-in"></i> Wallet</a>
+                                    </li>
+                                    {% endif %}
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <li class="uk-nav-header"></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+
+        
+
+        
+
+        <!-- User login modal -->
+        <div id="uni_user_login_modal" class="uk-modal-full uk-modal" data-uk-modal>
+            <div class="uk-modal-dialog dark:uk-background-gray-100 dark:uk-text-gray-30">
+                <div class="uk-modal-close-full uk-position-small">
+                    <button aria-label="Close" class="uk-button uk-button-small uk-button-icon uk-button-danger uk-button-outline uk-radius-circle" type="button">
+                        <i class="uk-icon-small uk-text-unset" data-feather="x"></i>
+                    </button>
+                </div>
+                <div class="uk-container uk-container-xsmall">
+                    <div class="uk-section uk-width-medium@m uk-margin-auto uk-flex-column uk-flex-center" data-uk-height-viewport="">
+                        <div class="uk-card uk-panel">
+                            <ul class="uk-subnav uk-h2" data-uk-switcher="animation: uk-animation-slide-bottom-small, uk-animation-slide-top-small" hidden>
+                                <li><a href="#login">Log in</a></li>
+                                <li><a href="#register">Register</a></li>
+                                <li><a href="#forgot_password">Forgot Password</a></li>
+                            </ul>
+                            <ul class="uk-switcher uk-margin">
+                                <li>
+                                    <form class="uni-login-form uk-form-stacked uk-panel uk-width-1-1" action="https://unistudio.co/html/renox/main/sign-in.html?" method="post">
+                                        <h3 class="uk-h3 uk-text-center uk-margin-large-bottom@m">Portfolio Tracker</h3>
+                                        <div class="uk-margin">
+                                            <label for="email-login" class="uk-form-label">Your email: <span class="uk-text-danger">*</span></label>
+                                            <input id="email-login" type="email" name="email" autocomplete="email" class="uk-input" value="user@example.com" required>
+                                        </div>
+                                        <div class="uk-margin">
+                                            <label for="password-login" class="uk-form-label">Your password: <span class="uk-text-danger">*</span></label>
+                                            <input id="password-login" type="password" name="current-password" autocomplete="current-password" class="uk-input" value="12345678" required>
+                                        </div>
+                                        <div class="uk-margin uk-grid uk-flex-between uk-flex-middle" data-uk-grid>
+                                            <div class="uk-flex uk-flex-middle">
+                                                <input id="remember-login" type="checkbox" name="remember" class="uk-checkbox" checked>
+                                                <label for="remember-login" class="uk-form-label uk-margin-xsmall-left">Remember me?</label>
+                                            </div>
+                                            <div>
+                                                <a href="#user_reset_password" class="uk-link-line uk-text-small uk-text-bold" data-uk-switcher-item="2">
+                                                    <span>Forgot password</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="uk-margin-medium">
+                                            <button type="submit" class="uk-button uk-button-primary uk-button-large@m uk-width-expand">Log in</button>
+                                        </div>
+                                        <div class="uk-grid uk-grid-xsmall uk-flex-center uk-text-xlarge uk-margin-medium-top@m" data-uk-grid>
+                                            <a aria-label="facebook" href="#facebook"><i class="brand-facebook-alt"></i></a>
+                                            <a aria-label="google" href="#google"><i class="brand-google"></i></a>
+                                            <a aria-label="twitter" href="#twitter"><i class="brand-twitter"></i></a>
+                                        </div>
+                                    </form>
+                                    <p class="uk-text-small uk-text-bold uk-text-center uk-margin-large-top@m">
+                                        Don't have an account? <a href="#user_sign_up" class="uk-link-line" data-uk-switcher-item="1"><span>Sign up</span></a>.
+                                    </p>
+                                </li>
+                                <li>
+                                    <form class="uni-signup-form uk-form-stacked uk-panel uk-width-1-1" action="https://unistudio.co/html/renox/main/sign-in.html?" method="post">
+                                        <h3 class="uk-h3 uk-text-center uk-margin-large-bottom@m">Create an account</h3>
+                                        <div class="uk-margin">
+                                            <label for="name-signup" class="uk-form-label">Your name:</label>
+                                            <input id="name-signup" type="text" name="name" autocomplete="name" class="uk-input" value="thesalvare">
+                                        </div>
+                                        <div class="uk-margin-medium">
+                                            <label for="email-signup" class="uk-form-label">Your email: <span class="uk-text-danger">*</span></label>
+                                            <input id="email-signup" type="email" name="email" autocomplete="email" class="uk-input" value="user@example.com" required>
+                                        </div>
+                                        <div class="uk-margin">
+                                            <label for="password-signup" class="uk-form-label">Your password: <span class="uk-text-danger">*</span></label>
+                                            <input id="password-signup" type="password" name="new-password" autocomplete="new-password" class="uk-input" value="12345678" required>
+                                        </div>
+                                        <div class="uk-margin-medium">
+                                            <button type="submit" class="uk-button uk-button-primary uk-button-large@m uk-width-expand">Sign up</button>
+                                        </div>
+                                        <div class="uk-grid uk-grid-xsmall uk-flex-center uk-text-xlarge uk-margin-medium-top@m" data-uk-grid>
+                                            <a aria-label="facebook" href="#facebook"><i class="brand-facebook-alt"></i></a>
+                                            <a aria-label="google" href="#google"><i class="brand-google"></i></a>
+                                            <a aria-label="twitter" href="#twitter"><i class="brand-twitter"></i></a>
+                                        </div>
+                                    </form>
+                                    <p class="uk-text-small uk-text-bold uk-text-center uk-margin-large-top@m">
+                                        You already have an account? <a href="#user_login" class="uk-link-line" data-uk-switcher-item="0"><span>Log in</span></a>.
+                                    </p>
+                                </li>
+                                <li>
+                                    <form class="uk-form-stacked uk-panel uk-width-1-1" action="https://unistudio.co/html/renox/main/sign-in.html?" method="post">
+                                        <h3 class="uk-h3 uk-text-center uk-margin-large-bottom@m">Forgot password?</h3>
+                                        <div class="uk-margin">
+                                            <label for="email-reset" class="uk-form-label">Your email: <span class="uk-text-danger">*</span></label>
+                                            <input id="email-reset" type="email" name="email" class="uk-input" required>
+                                        </div>
+                                        <div class="uk-margin-top">
+                                            <button type="submit" class="uk-button uk-button-primary uk-button-large@m uk-width-expand">Reset my password</button>
+                                        </div>
+                                    </form>
+                                    <p class="uk-text-small uk-text-bold uk-text-center uk-margin-large-top@m">
+                                        Did you remember your password? <a href="#user_login" class="uk-link-line" data-uk-switcher-item="0"><span>Log in</span></a>.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+
+            <!-- Hero: Header -->
+            <header class="uni-header">
+
+                <!-- Notification bar -->
+                <div class="uk-padding-xsmall uk-text-medium uk-text-bold uk-text-center uk-margin-remove uk-radius-remove uk-background-gradient uk-text-white" data-uk-alert>
+                    <button aria-label="Close" class="uk-alert-close" type="button" data-uk-close></button>
+                    <p class="uk-flex-middle uk-flex-center uk-margin-remove uk-visible@m">The Best Dex Platform on Canto <a href="/" class="uk-button uk-button-2xsmall uk-button-default uk-button-invert uk-margin-small-left uk-text-small">Get started</a></p>
+                    <p class="uk-margin-remove uk-hidden@m">
+                        <a class="uk-link-reset uk-margin-2xsmall-left uk-text-semibold" href="/"><u>Best Dex on Canto.</u></a>
+                    </p>
+                </div>
+
+                <!-- Header navbar -->
+                <div class="uni-header-navbar" data-uk-sticky="top: 60; animation: uk-animation-slide-top">
+                    <div class="uk-container uk-container-large">
+                        <nav class="uk-navbar uk-navbar-container uk-navbar-transparent" data-uk-navbar>
+                            <div class="uk-navbar-top">
+                                <div class="uk-navbar-left uk-flex-1">
+                                    <div class="uk-navbar-item uk-hidden@m">
+                                        <a class="uk-link" href="#uni_mobile_menu" data-uk-toggle>
+                                            <span class="material-icons">menu</span>
+                                        </a>
+                                    </div>
+
+                                    <a class="uk-logo uk-navbar-item uk-h4 uk-h3@m uk-margin-remove" href="/">
+                                        <span class="uk-visible@m"> <img class="uk-visible dark:uk-hidden" width="140" src="{% static 'assets/images/onion.png' %}" alt="Onion" loading="lazy"> <img class="uk-hidden dark:uk-visible" width="140" src="{% static 'assets/images/onion.png' %}" alt="Onion" loading="lazy"> </span>
+                                        <span class="uk-hidden@m"> <img class="" width="40" src="{% static 'assets/images/onion-22189.png' %}" alt="Onion" loading="lazy"> </span>
+                                    </a>
+
+                                    <ul class="uk-navbar-nav uk-margin-left dark:uk-text-gray-10 uk-visible@m" data-uk-navbar-bound>
+                                        <li>
+                                            <a href="{% url 'app_user:generator' %}">Token Generator</a>
+                                            
+                                        </li>
+                                        <li><a href="{% url 'portfolio:canto_portfolio' %}">Asset Manager</a></li>
+                                        
+                                        <li>
+                                            <a href="{% url 'wallet:canto_wallet' %}">Wallet</a>
+                                            
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="uk-navbar-right uk-flex-right">
+                                    
+                                    {% if app_user != null %}
+                                        <!-- header: call to actions -->
+                                        <a href="" class="uk-button uk-button-small uk-button-darkgrey uk-radius-large uk-margin-xsmall-left uk-margin-xsmall-right uk-visible@m">
+                                            <span>${{ total }}</span>
+                                        </a>
+                                        <a href="{% url 'app_user:sign_out' %}" class="uni-logout-visible uk-button uk-button-small uk-button-default uk-button-alt uk-radius-large" data-uk-toggle onclick="UIkit.switcher('#uni_user_login_modal [data-uk-switcher]').show(0)">
+                                            <span>log out</span>
+                                        </a>
+                                        
+                                    {% else %}
+                                        <!-- header: call to actions -->
+                                        <a href="{% url 'app_user:sign_up' %}" class="uk-button uk-button-small uk-button-darkgrey uk-radius-large uk-margin-xsmall-left uk-margin-xsmall-right uk-visible@m">
+                                            <span>Create Wallet</span>
+                                        </a>
+                                        <a href="{% url 'wallet:canto_wallet' %}" class="uni-logout-visible uk-button uk-button-small uk-button-default uk-button-alt uk-radius-large" data-uk-toggle onclick="UIkit.switcher('#uni_user_login_modal [data-uk-switcher]').show(0)">
+                                            <span>View Wallet</span>
+                                        </a>
+                                    {% endif %}
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dark/Light toggle -->
+            <div class="darkmode-trigger uk-position-bottom-right uk-position-small uk-position-fixed uk-box-shadow-large uk-radius-circle" data-darkmode-toggle="">
+                <label class="switch">
+                    <span class="sr-only">Dark mode toggle</span>
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+    {% block content %}
+
+    {% endblock %}
+    
+
+        <!-- include scripts -->
+        <script src="{% static 'assets/js/typed.min.js' %}"></script>
+        <script defer src="{% static 'assets/js/jquery.min.js' %}"></script>
+        <script defer src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+        <script defer src="{% static 'assets/js/feather.min.js' %}"></script>
+        <script defer src="{% static 'assets/js/typed.min.js' %}"></script>
+        <script defer src="{% static 'assets/js/anime.min.js' %}"></script>
+        <script defer src="{% static 'assets/js/app.js' %}"></script>
+        <script defer src="{% static 'assets/js/swiper-helper.js' %}"></script>
+        <script defer src="{% static 'assets/js/typed-helper.js' %}"></script>
+        <script defer src="{% static 'assets/js/anime-helper.js' %}"></script>
+        <script defer src="{% static 'assets/js/anime-helper-defined-timelines.js' %}"></script>
+        <script>
+            // Schema toggle via URL
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const getSchema = urlParams.get("schema");
+            if (getSchema === "dark") {
+                document.documentElement.classList.add("uk-dark");
+                localStorage.setItem("darkMode", "1");
+            } else if (getSchema === "light") {
+                document.documentElement.classList.remove("uk-dark");
+                localStorage.setItem("darkMode", "0");
+            }
+        </script>

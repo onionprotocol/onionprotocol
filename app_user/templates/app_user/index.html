@@ -1,0 +1,83 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<div class="uni-create uk-section uk-section-large@m uk-panel uk-overflow-hidden uk-border-top">
+                <div class="uk-container">
+                    <div class="uk-panel uk-width-2xlarge@m uk-margin-auto uk-text-center">
+                        <h1 class="ml3">Welcome</h1>
+                        <p class="uk-text-large uk-text-muted uk-h6 uk-h6@m uk-text-center uk-text-gradient"><span class="typeTwo"></span></p>
+                        
+                        <div class="uk-grid-small uk-grid@m uk-grid-match uk-child-width-1-2@s uk-margin-large-top@m uk-grid" data-uk-grid>
+                            <div>
+                                <div class="uk-card uk-card-2xsmall uk-card-xsmall@m uk-card-default uk-radius-large dark:uk-background-gray-90">
+                                    <div class="uk-card-media-top uk-panel uk-overflow-hidden uk-radius uk-background-primary-10">
+                                        <canvas height="140"></canvas>
+                                        <div class="uk-position-center">
+                                            <img src="{% static 'assets/images/coh10.png' %}">
+                                        </div>
+                                        <a href="{% url 'wallet:canto_wallet' %}" class="uk-position-cover" aria-label="Create single"></a>
+                                    </div>
+                                    <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                        <a href="{% url 'wallet:canto_wallet' %}" class="uk-button uk-button-medium uk-button-primary uk-button-ghost uk-width-1-1">Wallet</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-2xsmall uk-card-xsmall@m uk-card-default uk-radius-large dark:uk-background-gray-90">
+                                    <div class="uk-card-media-top uk-panel uk-overflow-hidden uk-radius uk-background-secondary-10">
+                                        <canvas height="140"></canvas>
+                                        <div class="uk-position-center">
+                                            <img src="{% static 'assets/images/coh11.png' %}">
+                                        </div>
+                                        <a href="{% url 'app_user:generator' %}" class="uk-position-cover" aria-label="Create multiple"></a>
+                                    </div>
+                                    <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                        <a href="{% url 'app_user:generator' %}" class="uk-button uk-button-medium uk-button-secondary uk-button-ghost uk-width-1-1">Contract Generator</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="uk-card uk-card-2xsmall uk-card-xsmall@m uk-card-default uk-radius-large dark:uk-background-gray-90">
+                                    <div class="uk-card-media-top uk-panel uk-overflow-hidden uk-radius uk-background-secondary-10">
+                                        <canvas height="140"></canvas>
+                                        <div class="uk-position-center">
+                                            <img src="{% static 'assets/images/coh3.png' %}">
+                                        </div>
+                                        <a href="{% url 'portfolio:your_portfolio_canto' %}" class="uk-position-cover" aria-label="Create multiple"></a>
+                                    </div>
+                                    <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                        <a href="{% url 'portfolio:your_portfolio_canto' %}" class="uk-button uk-button-medium uk-button-primary uk-button-ghost uk-width-1-1">Asset Manager</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="uk-text-small uk-text-muted uk-margin-large-top@m">More tools to be added to this list, stay tuned...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="{% static 'assets/js/typed.min.js' %}"></script>
+  <script type="text/javascript">
+    var typed = new Typed('.type', {
+      strings: ['Welcome to', 'Onion Protocol.'],
+      typeSpeed: 120,
+      backspeed: 120,
+      loop:false,
+    });
+  </script>
+
+  <script type="text/javascript">
+    var typed = new Typed('.typeTwo', {
+      strings: ['We provide the following product line on Canto. \n\n join the world of decentralized finance'],
+      typeSpeed: 120,
+      backspeed: 120,
+      loop:false,
+    });
+  </script>
+
+{% endblock %}

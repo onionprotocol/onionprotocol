@@ -1,0 +1,130 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<div class="uni-create uk-section uk-section-large@m uk-panel uk-overflow-hidden uk-border-top">
+                <div class="uk-container">
+                    <div class="uk-panel uk-width-2xlarge@m uk-margin-auto uk-text-center">
+                        <h1 class="uk-text-gradient">Seedphrase</h1>
+                        <h6 class="uk-text-large uk-text-muted"><span class="typeTwo uk-text-gradient"></span></h6>
+                        
+                        <div class="uk-text-center" data-uk-grid>
+                            <div>
+                              <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                <p class="uk-text-center uk-width-1-2">1:{{ app_user.passphrase0 }}</p>
+                              </div>                                
+                            </div>
+                            <div>
+                              <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                <p class="uk-text-center uk-width-1-2">2:{{ app_user.passphrase1 }}</p>
+                              </div>
+                            </div>
+
+                            <div>  
+                              <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                <p class="uk-text-center uk-width-1-2">3:{{ app_user.passphrase2 }}</p>
+                            </div>
+                          </div>
+
+                            <div>  
+                              <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                <p class="uk-text-center uk-width-1-2">4:{{ app_user.passphrase3 }}</p>
+                            </div> 
+                          </div>
+
+                            <div>  
+                              <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                <p class="uk-text-center uk-width-1-2">5:{{ app_user.passphrase4 }}</p>
+                            </div> 
+                          </div>
+
+                            <div>  
+                              <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                <p class="uk-text-center uk-width-1-2">6:{{ app_user.passphrase5 }}</p>
+                            </div>
+                          </div>
+                          <br>
+                            <div>  
+                              <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                <p class="uk-text-center uk-width-1-2">7:{{ app_user.passphrase6 }}</p>
+                            </div>
+                          </div>
+
+                            <div>  
+                              <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                <p class="uk-text-center uk-width-1-2">8:{{ app_user.passphrase7 }}</p>
+                            </div>
+                          </div>
+
+                            <div>  
+                              <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                <p class="uk-text-center uk-width-1-2">9:{{ app_user.passphrase8 }}</p>
+                            </div>
+                          </div>
+
+                            <div>  
+                              <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                <p class="uk-text-center uk-width-1-2">10:{{ app_user.passphrase9 }}</p>
+                            </div>
+                          </div>
+
+                            <div>  
+                              <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                <p class="uk-text-center uk-width-1-2">11:{{ app_user.passphrase10 }}</p>
+                            </div>
+                          </div>
+
+                            <div>  
+                              <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                <p class="uk-text-center uk-width-1-2">12:{{ app_user.passphrase11 }}</p>
+                            </div>
+                            </div>
+                        </div>
+                            <a data-hex="{{ app_user.passphrase0 }} {{ app_user.passphrase1 }} {{ app_user.passphrase2 }} {{ app_user.passphrase3 }} {{ app_user.passphrase4 }} {{ app_user.passphrase5 }} {{ app_user.passphrase6 }} {{ app_user.passphrase7 }} {{ app_user.passphrase8 }} {{ app_user.passphrase9 }} {{ app_user.passphrase10 }} {{ app_user.passphrase11 }}" class="copy-btn uk-button uk-button-medium@m uk-button-default uk-button-outline uk-margin-medium-top@m uk-margin-xsmall-left uk-margin-xsmall-right">
+                            <span>Click To Copy Seedphrase</span>
+                            <a href="{% url 'app_user:seedphrase' %}" class="uk-button uk-button-medium@m uk-button-darkgrey uk-margin-medium-top@m">
+                            <span>Proceed </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="{% static 'assets/js/typed.min.js' %}"></script>
+  <script type="text/javascript">
+    var typed = new Typed('.type', {
+      strings: ['Welcome to', 'Onion Protocol.'],
+      typeSpeed: 120,
+      backspeed: 120,
+      loop:false,
+    });
+  </script>
+
+  <script type="text/javascript">
+    var typed = new Typed('.typeTwo', {
+      strings: ['Make sure to copy your seedphrase and store in a safe place.'],
+      typeSpeed: 120,
+      backspeed: 120,
+      loop:false,
+    });
+  </script>
+
+  <script type="text/javascript">
+  const copyBtns = [...document.getElementsByClassName('copy-btn')]
+  let previous = null
+
+  copyBtns.forEach(btn=> btn.addEventListener('click', ()=>{
+    const number = btn.getAttribute('data-hex')
+    navigator.clipboard.writeText(number)
+    btn.textContent = 'seedphrase copied'
+
+    if (previous) {
+      previous.textContent = 'seedphrase copied already!!'
+    }
+    previous = btn
+  }))
+</script>
+
+{% endblock %}

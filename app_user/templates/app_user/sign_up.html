@@ -1,0 +1,70 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block content %}
+
+            <div class="uni-sign-in uk-section uk-section-large@m uk-panel uk-overflow-hidden uk-border-top">
+
+                <!-- Page header -->
+                <header class="uni-page-header">
+                    <div class="uk-container">
+                        <h5 class="heading uk-h3 uk-h3@m uk-text-center">Create Wallet</h5>
+                        <p class="uk-text-large uk-text-muted uk-h6@m uk-text-center"><span class="typeTwo uk-text-gradient"></span></p>
+                    </div>
+                </header>
+                <div class="uk-margin-top uk-margin-xsmall-top@m">
+                    <div class="uk-container">
+                        <div class="uk-flex-column uk-flex-center uk-width-medium@m uk-margin-auto">
+                          {% if messages %}
+                            {% for message in messages %}
+                                
+
+                                <!-- Notification bar -->
+                                <div class="uk-padding-xsmall uk-text-medium uk-text-bold uk-text-center uk-margin-remove uk-radius-remove uk-background-gradient uk-text-white" data-uk-alert>
+                                    <button aria-label="Close" class="uk-alert-close" type="button" data-uk-close></button>
+                                    <p class="uk-flex-middle uk-flex-center  uk-margin-remove ">{{ message }} </p>
+                    
+                                </div>    
+        
+                            {% endfor %}
+                            {% endif %}
+                            <form class="uk-form-stacked uk-panel uk-width-1-1" action="" method="post">
+                              {% csrf_token %}
+                                <div class="uk-margin-medium">
+                                    <label for="username-signup" class="uk-form-label">Account Name: <span class="uk-text-danger">*</span></label>
+                                    <input id="username-signup" type="text" name="username" class="uk-input" required>
+                                </div>
+                                
+                                <div class="uk-margin">
+                                    <label for="password-signup-page" class="uk-form-label">Password: <span class="uk-text-danger">*</span></label>
+                                    <input id="password-signup-page" type="password" name="password1" class="uk-input" required>
+                                </div>
+                                <div class="uk-margin">
+                                    <label for="password-signup-page" class="uk-form-label">Repeat Password: <span class="uk-text-danger">*</span></label>
+                                    <input id="password-signup-page" type="password" name="password2" class="uk-input" required>
+                                </div>
+                                <div class="uk-margin-medium">
+                                    <button type="submit" class="uk-button uk-button-primary uk-button-small@m uk-width-expand">Create Wallet</button>
+                                </div>
+                                
+                            </form>
+                            <p class="uk-text-small uk-text-bold uk-text-center uk-margin-xsmall-top@m">
+                                You already have a wallet? <a href="{% url 'app_user:sign_in' %}" class="uk-link-line"><span>Enter Wallet</span></a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="{% static 'assets/js/typed.min.js' %}"></script>
+        <script type="text/javascript">
+    var typed = new Typed('.typeTwo', {
+      strings: ['Please Keep password safe and secure'],
+      typeSpeed: 120,
+      backspeed: 120,
+      loop:false,
+    });
+  </script>
+
+
+
+{% endblock %}

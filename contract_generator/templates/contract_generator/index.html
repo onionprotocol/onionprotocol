@@ -1,0 +1,48 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+
+<div class="uni-create uk-section uk-section-large@m uk-panel uk-overflow-hidden uk-border-top">
+                <div class="uk-container">
+                    <div class="uk-panel uk-width-2xlarge@m uk-margin-auto uk-text-center">
+                        <h1 class="uk-h4 uk-h2@m">Upload item</h1>
+                        <p class="uk-text-large uk-text-muted">Choose “Single” if you want your collectible to be one of a kind or “Multiple” if you want to sell one collectible multiple times</p>
+                        <div class="uk-grid-small uk-grid@m uk-grid-match uk-child-width-1-2@s uk-margin-large-top@m uk-grid" data-uk-grid>
+                            <div>
+                                <div class="uk-card uk-card-2xsmall uk-card-xsmall@m uk-card-default uk-radius-large dark:uk-background-gray-90">
+                                    <div class="uk-card-media-top uk-panel uk-overflow-hidden uk-radius uk-background-primary-10">
+                                        <canvas height="140"></canvas>
+                                        <div class="uk-position-center">
+                                            <img src="{% static 'assets/images/coh10.png' %}">
+                                        </div>
+                                        <a href="create-single.html" class="uk-position-cover" aria-label="Create single"></a>
+                                    </div>
+                                    <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                        <a href="create-single.html" class="uk-button uk-button-medium uk-button-primary uk-button-ghost uk-width-1-1">Wallet</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-2xsmall uk-card-xsmall@m uk-card-default uk-radius-large dark:uk-background-gray-90">
+                                    <div class="uk-card-media-top uk-panel uk-overflow-hidden uk-radius uk-background-secondary-10">
+                                        <canvas height="140"></canvas>
+                                        <div class="uk-position-center">
+                                            <img src="{% static 'assets/images/coh10.png' %}">
+                                        </div>
+                                        <a href="create-multiple.html" class="uk-position-cover" aria-label="Create multiple"></a>
+                                    </div>
+                                    <div class="uk-padding-xsmall-top uk-padding-small-top@m">
+                                        <a href="create-multiple.html" class="uk-button uk-button-medium uk-button-secondary uk-button-ghost uk-width-1-1">Contract Generator</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="uk-text-small uk-text-muted uk-margin-large-top@m">We do not own your private keys and cannot access your funds without your confirmation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

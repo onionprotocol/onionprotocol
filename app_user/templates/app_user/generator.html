@@ -1,0 +1,95 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+		
+		<div class="uni-create uk-section uk-section-large@m uk-panel uk-overflow-hidden uk-border-top">
+                <div class="uk-container uk-container-xsmall">
+                    <div class="uk-grid" data-uk-grid>
+                        <div class="uk-width-3-3@m">
+                            <div class="uk-grid-small uk-flex-middle uk-flex-between uk-grid" data-uk-grid>
+                                <div>
+                                    <h3 class="uk-h4 uk-h3@m uk-margin-2xsmall uk-text-center">Create Contract</h3>
+                                    <div class="col-12 align-self-center">
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
+
+
+                                
+                                
+                            </div>
+                        </div>
+                        <div class="uk-width-3-3@m">
+                            <div class="uk-panel uk-width-2xlarge@m uk-margin-auto">
+                                <!--Content to be Displayed when metamask is not available-->
+                                <button class="content uk-button uk-button-gradient uk-width-1-1 uk-width-1-1@m" id="metamask-status"></button>
+                                <!---status check--->
+                                <p class="content hide uk-text-center uk-text-secondary" id="statusText"></p>
+                                <!--When you are connected to mainnet-->
+                                        <p class="content hide uk-text-center uk-text-bold uk-text-primary"><small id="current-address" align="center"></small></p>
+                                <form id="asset-form" class="uk-form-stacked uk-grid-xsmall uk-grid-small@m uk-child-width-1-1 uk-grid" data-uk-grid>
+                                    
+                                    
+                                    <div class="uk-form-group">
+                                        <h3 class="uk-h6 uk-margin-remove">Token details</h3>
+                                        <p class="uk-text-xsmall uk-text-small@m uk-text-bold uk-text-muted uk-margin-remove">Describe your token in details.</p>
+
+                                    </div>
+                                    <div class="uk-form-group uk-width-1-2@m">
+                                        <label class="uk-form-label uk-text-small">Token Name</label>
+                                        <div class="uk-form-controls">
+                                            <input id="name" class="uk-input uk-form-small" type="text" placeholder="e. g. Canto" required>
+                                        </div>
+                                    </div>
+                                    <div class="uk-form-group uk-width-1-2@m">
+                                        <label class="uk-form-label uk-text-small">Token Symbol</label>
+                                        <div class="uk-form-controls">
+                                            <input id="symbol" class="uk-input uk-form-small" type="text" placeholder="e. g. cnto" required>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div class="uk-form-group uk-width-1-2@m">
+                                        <label class="uk-form-label uk-text-small">Total Supply</label>
+                                        <div class="uk-form-controls">
+                                            <input id="total-supply" class="uk-input uk-form-small" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="uk-form-group uk-width-1-2@m">
+                                        <label class="uk-form-label uk-text-small">Decimal</label>
+                                        <div class="uk-form-controls">
+                                            <input id="decimals" class="uk-input uk-form-small" type="text" placeholder="e. g. Propertie">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="uk-form-group"></div>
+                                    <div class="uk-form-group">
+                                        <div class="uk-grid-xsmall uk-flex-middle uk-flex-center uk-flex-between@m uk-grid" data-uk-grid>
+                                            <div class="uk-width-1-1 uk-width-expand@m">
+                                                <button id="submit-btn" class="uk-button uk-button-gradient uk-width-1-1 uk-width-xsmall@m">Create Token</button>
+                                            </div>
+                                            <div>
+                                                <span class="uk-text-meta uk-flex-middle"><i class="uk-icon-xsmall uk-margin-2xsmall-right uk-text-success material-icons">check_circle</i> Saved just now</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'popper.min.js' %}"></script>
+        <script src="{% static 'bootstrap.min.js' %}"></script>
+        <script src="{% static 'web3.min.js' %}"></script>
+        <!--Core-->
+        <script src="{% static 'index.js' %}"></script>
+
+{% endblock %}

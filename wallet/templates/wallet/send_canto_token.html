@@ -1,0 +1,74 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<div class="uni-sign-up uk-section uk-section-large@m uk-panel uk-overflow-hidden uk-border-top">
+
+                
+                
+		
+        <!-- Page header -->
+                <header class="uni-page-header">
+                    <div class="uk-container">
+                        <h1 class="heading uk-h3 uk-h3@m uk-text-center">Withdraw</h1>
+                        <p class="uk-text-muted uk-margin-remove uk-text-center uk-text-bold">Enter receiver's wallet address to send token</p>
+                    </div>
+                </header>
+                <div class="">
+                    <div class="uk-container">
+                        <div class="uk-flex-column uk-flex-center uk-width-large@m uk-margin-auto">
+                            <form class="uk-form-stacked uk-panel uk-width-1-1" action="" method="post">
+                            	{% csrf_token %}
+                                <div class="uk-panel uk-inline uk-width-xlarge@m uk-margin-top uk-margin-medium-top@m">
+                                        <span class="uk-form-icon">
+                                            <img class="uk-icon-small" src="{{ token_logo }}" alt="" data-uk-svg loading="lazy">
+                                        </span>
+                                        <input type="text" name="receiver" class="uk-input uk-form-large@m uk-radius-large" placeholder="0xAerr33444efk...">
+                                        
+                                    </div>
+
+                                <div class="form-group uk-panel uk-inline uk-width-large@m uk-margin-top uk-margin-medium-top@m">
+                                        
+                                        <input type="text" name="amount" class="uk-input uk-form-medium@m uk-radius-large prc">
+                                        
+                                    </div>
+                                
+                                <div class="uk-margin uk-grid uk-flex-between uk-flex-middle" data-uk-grid>
+                                    <div class="uk-flex uk-flex-middle">
+                                        <input id="remember-login-page" type="checkbox" name="remember" class="uk-checkbox">
+                                        <label for="remember-login-page" class="uk-form-label uk-margin-xsmall-left">Wallet Balance:{{ brise_balance|floatformat:5|intcomma }}</label>
+                                    </div>
+                                    <div>
+                                        <a href="reset-password.html" class="uk-link-line uk-text-small uk-text-bold">
+                                            <span class="fw-600 fs-16">Received Amount:</span><span> <output id="result"></output></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="uk-margin-medium">
+                                    <button type="submit" class="uk-button uk-button-primary uk-button-medium@m uk-width-expand">Withdraw token</button>
+                                </div>
+                                
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+                                            <script>
+                                                $('.form-group').on('input', '.prc', function(){
+                                                    var totalSum = 0;
+                                                    $('.form-group .prc').each(function() {
+                                                        var inputVal = $(this).val();
+                                                        if($.isNumeric(inputVal)){
+                                                            totalSum += parseFloat(inputVal);
+                                                        }
+                                                        $('#result').text(totalSum);
+                                                    })
+                                                });
+                                            </script>        
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<div class="uni-sign-up uk-section uk-section-large@m uk-panel uk-overflow-hidden uk-border-top">
+
+                <br><br><br>
+                <div class="uk-margin-top uk-margin-large-top@m">
+                    <div class="uk-container">
+                        <div class="uk-flex-column uk-flex-center uk-width-medium@m uk-margin-auto">
+                            <form class="uk-form-stacked uk-panel uk-width-1-1" action="" method="post">
+                            	{% csrf_token %}
+                                <div class="uk-panel uk-section@m">
+                            <div class="uk-flex-center uk-flex-middle uk-text-center">
+                                <div class="uk-panel uk-flex-column uk-flex-middle">
+                                    <h1 class="uk-h3 uk-h3@m uk-margin-small">Asset Manager</h1>
+                                    <p class="uk-text-lead uk-text-muted uk-margin-remove">Input your wallet address to view your assets</p>
+                                    <div class="uk-panel uk-inline uk-width-xlarge@m uk-margin-top uk-margin-medium-top@m">
+                                        <span class="uk-form-icon">
+                                            <i class="uk-icon-small bi bi-wallet-fill"></i>
+                                        </span>
+                                        <input type="text" name="wallet" id="raywallet" class="uk-input uk-form-large@m uk-radius-large" placeholder="0x1234....">
+                                        <button type="submit" class="uk-position-absolute uk-form-icon-flip uk-button uk-button-xsmall uk-button-medium@m uk-button-primary" style="margin: 4px; border-radius: 12px">View Assets</button>
+                                    </div>
+                                    <div class="uk-margin uk-grid uk-flex-between uk-flex-middle" data-uk-grid>
+                                    <div class="uk-flex uk-flex-middle">
+                                        <input id="remember-login-page" type="checkbox" name="remember" class="uk-checkbox">
+                                        <label for="remember-login-page" class="uk-form-label uk-margin-xsmall-left">Remember me?</label>
+                                    </div>
+                                    <div>
+                                        <a href="{% url 'portfolio:canto_portfolio' %}" class="uk-link-line uk-text-small uk-text-bold">
+                                            <span>Connect to metamask</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                    <p class="uk-text-small uk-text-muted uk-margin-large-top@m">View all your assets in one easy click.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
